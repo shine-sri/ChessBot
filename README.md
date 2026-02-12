@@ -5,114 +5,114 @@ A performance-focused chess engine built using classical AI search techniques, o
 
 **🔹 Project Summary**
 
-Built a chess engine from scratch using C++ with efficient board representation.
+* Built a chess engine from scratch using C++ with efficient board representation.
 
-Implemented Minimax with Alpha-Beta pruning for optimized decision making.
+* Implemented Minimax with Alpha-Beta pruning for optimized decision making.
 
-Designed a custom static evaluation function based on material balance, positional heuristics, and mobility.
+* Designed a custom static evaluation function based on material balance, positional heuristics, and mobility.
 
-Integrated legal move validation with check detection and state management.
+* Integrated legal move validation with check detection and state management.
 
-Optimized performance using pruning, move ordering, and depth control.
+* Optimized performance using pruning, move ordering, and depth control.
 
 **🧠 Problem Overview**
 
-Chess engines require:
+* Chess engines require:
 
-Efficient state representation
+* Efficient state representation
 
-Fast legal move generation
+* Fast legal move generation
 
-Optimal search strategy
+* Optimal search strategy
 
-Reliable position evaluation
+* Reliable position evaluation
 
-The challenge lies in balancing:
+* The challenge lies in balancing:
 
-Search depth vs computation time
+* Search depth vs computation time
 
-Tactical sharpness vs positional understanding
+* Tactical sharpness vs positional understanding
 
-Correctness vs performance
+**Correctness vs performance**
 
-A naïve brute-force approach quickly becomes infeasible due to the exponential branching factor (~35 moves per position).
+* A naïve brute-force approach quickly becomes infeasible due to the exponential branching factor (~35 moves per position).
 
 **🎯 Project Objective**
 
-VaultMate treats chess as a deterministic search problem with heuristic evaluation.
+* Bot treats chess as a deterministic search problem with heuristic evaluation.
 
-Input
+  *Input*
 
-Current board state
+  - Current board state
 
-Active player
+  - Active player
 
-Search depth
+  - Search depth
 
-Output
+  *Output*
 
-Best possible move
+  - Best possible move
 
-Evaluation score of resulting position
+  - Evaluation score of resulting position
 
-The engine ensures:
+  - The engine ensures:
 
-Legal move generation
+  - Legal move generation
 
-Checkmate and stalemate detection
+  - Checkmate and stalemate detection
 
-Valid state transitions
+  - Valid state transitions
 
 **💡 Core Design Philosophy**
 
-Search smart, prune aggressively, evaluate efficiently.
+* Search smart, prune aggressively, evaluate efficiently.
 
-Instead of exploring all possibilities:
+* Instead of exploring all possibilities:
 
-Prune irrelevant branches early using Alpha-Beta
+* Prune irrelevant branches early using Alpha-Beta
 
-Evaluate only meaningful board states
+* Evaluate only meaningful board states
 
-Use move ordering to maximize pruning efficiency
+* Use move ordering to maximize pruning efficiency
 
-The system is modular — evaluation, search, and board logic are separated for easy upgrades.
+* The system is modular — evaluation, search, and board logic are separated for easy upgrades.
 
 **🧩 System Approach**
 
-VaultMate follows a Search → Evaluate → Prune pipeline.
+  - VaultMate follows a Search → Evaluate → Prune pipeline.
 
 **1️⃣ Board Representation**
 
-8×8 matrix representation
+  - 8×8 matrix representation
 
-Piece encoding using enums / integers
+  - Piece encoding using enums / integers
 
-Turn-based state tracking
+  - Turn-based state tracking
 
-Move history (for undo functionality)
+  - Move history (for undo functionality)
 
-Supports:
+**Supports:**
 
-Castling
+  - Castling
 
-Pawn promotion
+  - Pawn promotion
 
-En passant
+  - En passant
 
-Check detection
+  - Check detection
 
 **2️⃣ Move Generation Engine**
 
-Generates all pseudo-legal moves
+  - Generates all pseudo-legal moves
 
-Filters illegal moves (leaving king in check)
+  - Filters illegal moves (leaving king in check)
 
-Categorizes:
+**Categorizes:**
 
-Captures
+  - Captures
 
-Quiet moves
+  - Quiet moves
 
-Special moves
+  - Special moves
 
-Optimized to reduce redundant computations.
+  - Optimized to reduce redundant computations.
