@@ -79,7 +79,7 @@ A performance-focused chess engine built using classical AI search techniques, o
 
 **🧩 System Approach**
 
-  - VaultMate follows a Search → Evaluate → Prune pipeline.
+  - The Bot follows a Search → Evaluate → Prune pipeline.
 
 **1️⃣ Board Representation**
 
